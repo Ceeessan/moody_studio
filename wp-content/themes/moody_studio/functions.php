@@ -19,8 +19,8 @@ require_once(get_template_directory() . "/init.php");
 
 
 
-function mytheme_add_woocommerce_support() {
+function moody_studio_add_woocommerce_support() {
 	add_theme_support( 'woocommerce' );
 }
-add_action( 'after_setup_theme', 'mytheme_add_woocommerce_support' );
+add_action( 'after_setup_theme', 'moody_studio_add_woocommerce_support' );
 

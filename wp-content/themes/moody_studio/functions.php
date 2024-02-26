@@ -5,11 +5,13 @@ if(!defined('ABSPATH')){
     exit;
 }
 
-// require_once("vite.php");
+require_once("vite.php");
 
 // require_once("hooks.php");
 
 require_once("init.php");
+
+require_once("settings.php");
 
 
 

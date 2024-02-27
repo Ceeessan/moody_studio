@@ -13,7 +13,7 @@ require_once("init.php");
 
 require_once("settings.php");
 
-
+require_once("shortcodes.php");
 
 //Initialize theme
 require_once(get_template_directory() . "/init.php");

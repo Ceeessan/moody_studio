@@ -101,6 +101,37 @@ function moody_studio_add_settings_init(){
                     "option_type" => "text"
                 )
                 );
+                register_setting(
+                    "butik",
+                    "blog_message"
+                );
+                add_settings_field(
+                    "blog_message",
+                    "Blog Message",
+                    "moody_studio_section_setting",
+                    "butik",
+                    "butik_general",
+                    array(
+                        "option_name" => "blog_message",
+                        "option_type" => "text"
+                    )
+                    );
+                register_setting(
+                    "butik",
+                    "blog_message"
+                );
+                add_settings_field(
+                    "copyright_message",
+                    "Copyright Message",
+                    "moody_studio_section_setting",
+                    "butik",
+                    "butik_general",
+                    array(
+                        "option_name" => "copyright_message",
+                        "option_type" => "text"
+                    )
+                    );
+          
     
 }
 add_action('admin_init', 'moody_studio_add_settings_init');

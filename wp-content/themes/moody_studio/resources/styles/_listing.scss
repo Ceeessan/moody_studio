@@ -1,4 +1,22 @@
 
+.woocommerce-breadcrumb{
+    display: flex;
+    justify-content: center;
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 21.09px;
+    color: $dark-grey-color;
+    padding-top: 30px;
+    padding-bottom:30px;
+
+    a{
+        font-weight: 400;
+        font-size: 18px;
+        line-height: 21.09px;
+        color: $dark-grey-color;
+        text-decoration:none;
+    }
+}
 
     .member-banner{
         display:flex;

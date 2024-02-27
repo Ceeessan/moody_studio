@@ -1,0 +1,36 @@
+
+
+    .member-banner{
+        display:flex;
+        flex-direction:column;
+        justify-content: center;
+        text-align:center;
+       
+        width: 100%;
+        height: 265px;
+        background-color: #DCE1DA;
+
+        .member-text{
+            font-weight: 500;
+            font-size:38px;
+            line-height: 44.53px;
+            color: $dark-grey-color;
+            padding-bottom:25px;
+        }
+
+        .setting-banner-text{
+            font-weight: 400;
+            font-size: 38px;
+            line-height: 44.53px;
+            color: $dark-grey-color;
+            padding-bottom:25px;
+        }
+
+        .no-member-text{
+            font-weight: 400;
+            font-size: 18px;
+            line-height: 21.09px;
+            color: $dark-grey-color;
+        }
+
+    }

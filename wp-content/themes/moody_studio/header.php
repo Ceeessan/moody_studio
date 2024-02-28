@@ -23,8 +23,16 @@
                     'theme_location' => 'main_menu',
                     'menu_id' => 'main-menu', 
                     'container' => 'nav',
-                    'container_class' => 'primary-menu-container',
-                );
+                    'items_wrap' => 
+                    '<ul
+                    <li><a href="#"><img src="' . esc_url( get_template_directory_uri() ) . '/resources/images/search.svg" alt="Search"></a></li>
+                    <li><a href="#"><img src="' . esc_url( get_template_directory_uri() ) . '/resources/images/user.svg" alt="My Account"></a></li>
+                    <li><a href="http://moody_studio.test/cart/"><img src="' . esc_url( get_template_directory_uri() ) . '/resources/images/cart.svg" alt="Cart"></a></li>
+                    <li><a href="#"><img src="' . esc_url( get_template_directory_uri() ) . '/resources/images/favorite.svg" alt="Favorite"></a></li>
+                    </ul>',
+
+/*                     'container_class' => 'primary-menu-container',*/                
+);
                 wp_nav_menu($header_menu);
                 ?>
             </div>

@@ -13,7 +13,7 @@ function mytheme_widgets_init() {
     ) );
 }
 add_action( 'widgets_init', 'mytheme_widgets_init' );
-
+//////////////////////////////////////
 
 
 // Ta bort breadcrumbs från WooCommerce
@@ -74,3 +74,13 @@ function add_text_under_title(){
 }
 
 add_action('woocommerce_archive_description', 'add_text_under_title');
+
+
+function load_products_button(){
+
+    echo '<div class=button-container>';
+    echo '<button class="load-products-button"> LOAD MORE PRODUCTS </button>';
+    echo '</div>';
+}
+
+add_action('woocommerce_after_main_content', 'load_products_button');

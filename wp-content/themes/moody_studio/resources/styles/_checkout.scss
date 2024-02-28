@@ -1,0 +1,66 @@
+
+.woocommerce-info{
+    display:none;
+}
+
+form{
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+.col2-set{
+    display:flex;
+    justify-content:center;
+    // width:45%;
+    
+    .woocommerce-billing-fields{
+        h3{
+            font-size:30px;
+        }
+        
+            label{
+                font-family: "Roboto-Bold";
+                color: $dark-grey-color;
+                font-size: 14px;
+                margin-top:5px;
+
+                .required{
+                    color: $dark-grey-color;
+                }            
+            }
+
+            .input-text {
+                height: 40px;
+                border-radius: 5px;
+                border: 1px solid rgb(156, 156, 156);
+
+            }
+    }
+
+    .col-2{
+        display:none;
+    }
+
+
+
+}
+
+
+#order_review_heading{
+    display:none;
+}
+
+.order-and-payment{
+    padding-right: 200px;
+    margin-top: 65px;
+ 
+
+    .shop_table{
+        border:none;
+    }
+
+    .woocommerce-shipping-totals{
+        display:none;
+    }
+  
+}
+}

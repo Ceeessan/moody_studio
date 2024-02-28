@@ -57,19 +57,19 @@ add_action( 'woocommerce_before_main_content', 'show_banner_shop', 10 );
 function add_text_under_title(){
 
     if(is_product_category('bedroom')){
-        echo "<p> Its easy to transform your bedroom interior with our great selection of acessories. </p>";
+        echo "<p class='title-mini-text'> Its easy to transform your bedroom interior with our great selection of acessories. </p>";
     } 
     elseif(is_product_category('bathroom')){
-        echo "<p> Its easy to transform your bathroom interior with our great selection of acessories. </p>";
+        echo "<p class='title-mini-text'> Its easy to transform your bathroom interior with our great selection of acessories. </p>";
     }
     elseif(is_product_category('livingroom')){
-        echo "<p> Its easy to transform your livingroom interior with our great selection of acessories. </p>";
+        echo "<p class='title-mini-text'> Its easy to transform your livingroom interior with our great selection of acessories. </p>";
     }
     elseif(is_product_category('outdoor')){
-        echo "<p> Its easy to transform your outdoor interior with our great selection of acessories. </p>";
+        echo "<p class='title-mini-text'> Its easy to transform your outdoor interior with our great selection of acessories. </p>";
     }
     elseif(is_product_category('store') || is_shop() ){
-        echo "<p> Its easy to transform your home interior with our great selection of acessories. </p>";
+        echo "<p class='title-mini-text'> Its easy to transform your home interior with our great selection of acessories. </p>";
     }
 }
 

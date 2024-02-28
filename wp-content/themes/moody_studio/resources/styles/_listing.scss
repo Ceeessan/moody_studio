@@ -18,33 +18,8 @@
     }
 }
 
-    
-.woocommerce-result-count{
-    display:none;
-}
 
-.woocommerce-ordering{
-    display:none;
-}
 
-.woocommerce-products-header{
-
-    h1{
-        font-weight:700;
-        font-size:44px;
-        line-height: 51.56px;
-        color: $dark-grey-color;
-
-    }
-
-    p{
-        font-weight:300;
-        font-size: 18px;
-        line-height: 21.09px;
-        color: $dark-grey-color;
-    }
-
-}
 
     .member-banner{
         display:flex;
@@ -81,7 +56,33 @@
 
     }
 
-
+    .woocommerce-result-count{
+        display:none;
+    }
+    
+    .woocommerce-ordering{
+        display:none;
+    }
+    
+    .woocommerce-products-header{
+        padding-left:500px;
+        h1{
+            font-family:'Roboto-Bold';
+            font-size:44px;
+            line-height: 51.56px;
+            color: $dark-grey-color;
+            padding-bottom: 10px;
+    
+        }
+    
+        .title-mini-text{
+            font-family:'Roboto-Light';
+            font-size: 18px;
+            line-height: 21.09px;
+            color: $dark-grey-color;
+      
+        }
+    }
 
 
    
@@ -106,8 +107,8 @@
         flex-direction:row;
         flex-wrap:wrap;
         justify-content:center;
-        // background-color: pink;
-        width:90%;
+        background-color: pink;
+        width:70%;
         margin-left: 50px;
         
 

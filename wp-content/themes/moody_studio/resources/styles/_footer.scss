@@ -13,6 +13,8 @@ footer{
         justify-content:space-between;
         padding: 40px 20px 30px 40px;
 
+
+
     .urban-container{
         display:flex;
         flex-direction: column;
@@ -47,35 +49,94 @@ footer{
     }
 
     .icons{
-        display:flex;
-      
-     
+
 
         ul{
+    
             display:flex;
             flex-direction: row;   
             list-style:none;
-
-            li{
-                display:flex;
-                justify-content:space-between;
-                margin:auto;
-
-                a{        
-                    text-decoration:none;
-                    color: $white-color; 
-                    // padding:30px;
-                
-                }
-
-         
-            }   
+            justify-content: space-between;
+            margin:auto;
+            margin-top: 30px;
             
 
-       
-        }
+            //FB-icon
+            #menu-item-28{          
+                a{        
+                    display: inline-block;
+                    background-image: url('/resources/images/facebook.svg');     
+                    background-position: center center;
+                    background-size: contain;
+                  
+                    background-repeat: no-repeat;
+                    text-decoration: none;
+                    width: 20px;
+                    height: 20px;
+                    color: transparent;
 
+                 
+                    filter: invert(100%) sepia(0%) saturate(0%) hue-rotate(0deg);    
+                }           
+            }
+
+                //Twitter-icon
+                #menu-item-29{
+                    a{   
+                        display: inline-block;
+                        background-image: url('/resources/images/twitter.svg');     
+                        background-position: center center;
+                        background-size: contain;
+                    
+                        background-repeat: no-repeat;
+                        text-decoration: none;
+                        width: 20px;
+                        height: 20px;
+                        color: transparent;
+    
+                     
+                        filter: invert(100%) sepia(0%) saturate(0%) hue-rotate(0deg); 
+                    }  
+                }
+
+                //Instagram-icon                
+                #menu-item-30{
+                    a{        
+                        display: inline-block;
+                        background-image: url('/resources/images/instagram.svg');     
+                        background-position: center center;
+                        background-size: contain;
+                  
+                        background-repeat: no-repeat;
+                        text-decoration: none;
+                        width: 20px;
+                        height: 20px;
+                        color: transparent;
+    
+                     
+                        filter: invert(100%) sepia(0%) saturate(0%) hue-rotate(0deg); 
+                    }
+                }
+                //Youtube-icon
+                #menu-item-31{
+                    a{        
+                        display: inline-block;
+                        background-image: url('/resources/images/youtube.svg');     
+                        background-position: center center;
+                        background-size: contain;
+
+                        background-repeat: no-repeat;
+                        text-decoration: none;
+                        width: 20px;
+                        height: 20px;
+                        color: transparent;
+    
+                     
+                        filter: invert(100%) sepia(0%) saturate(0%) hue-rotate(0deg); 
+            }             
+        }   
     }
+}
 
     .shopping-container{
         width:103px;
@@ -137,7 +198,7 @@ footer{
                     
                 }
             }
-
+        
          
         }
     

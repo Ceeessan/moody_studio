@@ -64,6 +64,33 @@ if ( woocommerce_product_loop() ) {
     <div class= "shop-page-container">
         <div class="filter-div">
 
+        <div class="filtering-div">
+    <h2 class="new-arrival-header">New Arrivals</h2>
+    <p class="new-arrival-text"> New Arrivals </p>
+    
+    <h2 class="shop-room-header">Shop By Room</h2>
+    <ul class=" categories">
+        <?php
+        // Hämta alla produktkategorier
+        $product_categories = get_terms( array(
+            'taxonomy' => 'product_cat',
+            'hide_empty' => true,
+        ) );
+
+        // Visa kategorierna som filtreringsalternativ
+        foreach ( $product_categories as $category ) {
+            echo '<li><a href="' . esc_url( get_term_link( $category ) ) . '">' . esc_html( $category->name ) . '</a></li>';
+        }
+        ?>
+    </ul>
+
+    <h2 class="shop-concept">Shop By Concept</h2>
+    <p class="concept-text"> Conscious </p>
+    <p class="concept-text"> Premium Quality </p>
+    <p class="concept-text"> Classic Collection </p>
+</div>
+
+
         <div id="primary" class="widget-area">
         <?php dynamic_sidebar( 'sidebar-1' ); ?>
         </div>

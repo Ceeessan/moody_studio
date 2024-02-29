@@ -84,3 +84,54 @@ function load_products_button(){
 }
 
 add_action('woocommerce_after_main_content', 'load_products_button');
+
+
+
+//Fixa färg-pluppar för variablerna
+function custom_display_product_colors() {
+    global $product;
+
+    
+    if ( $product->is_type( 'variable' ) && taxonomy_exists( 'pa_color' ) ) {
+        
+        $terms = wc_get_product_terms( $product->get_id(), 'pa_color', array( 'fields' => 'names' ) );
+
+        if ( ! empty( $terms ) ) {
+            $product_id = $product->get_id();
+
+            foreach ( $terms as $color ) {
+                // Skapa unikt id baserat på produktens id och attributets namn
+                $id = 'color_' . $product_id . '_' . sanitize_title( $color );
+                
+                echo '<div class="attribute-div">';
+                echo '<label for="' . esc_attr( $id ) . '" class="attribute-color">';
+                echo '<input type="radio" id="' . esc_attr( $id ) . '" name="product_color" value="' . esc_attr( $color ) . '">';
+                
+                echo '</label><br>';
+                echo '</div>';
+            }
+        }
+    }
+}
+add_action( 'woocommerce_shop_loop_item_title', 'custom_display_product_colors', 10 );
+
+
+
+//Skapa en hook som lägger till filter-rad under product-title
+function filter_sort_line(){
+
+    echo '<div class="filter-sort-container"> 
+    <div class= "filter-sort"> 
+    <img class="filter-icon" src="' . esc_url( get_template_directory_uri() ) . '/resources/images/filter.svg">
+    <p class="filter-text"> FILTER & SORT</p>
+    </div>
+
+    <div class="model-product-container">
+    <p class="models-text">Models</p>
+    <p>Products</p>
+     </div>
+
+    </div>';
+}
+
+add_action('woocommerce_archive_description', 'filter_sort_line');

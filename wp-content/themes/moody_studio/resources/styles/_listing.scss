@@ -65,7 +65,7 @@
     }
     
     .woocommerce-products-header{
-        padding-left:480px;
+        padding-left:510px;
         h1{
             font-family:'Roboto-Bold';
             font-size:44px;
@@ -84,6 +84,52 @@
         }
     }
 
+    .filter-sort-container{
+        margin-top: 50px;
+        display:flex;
+        flex-direction:row;
+   
+        justify-content: space-between;
+       
+
+        .filter-sort{
+            display:flex;
+            flex-direction:row;
+            width: 300px;
+            vertical-align: baseline;
+            font-family: 'Roboto-Regular';
+            color: $dark-grey-color;
+
+            .filter-icon{
+                padding-right: 5px;
+                width: 30px;
+            }
+
+            .filter-text{
+                padding-top: 8px;
+                font-size: 16px;
+            }
+        }
+
+        .model-product-container{
+            display:flex;
+            flex-direction:row;
+            justify-content:end;
+            width: 300px;
+            vertical-align: baseline;
+            text-align: end;
+            font-family: 'Roboto-Regular';
+          margin-left: 50px;
+            color: $dark-grey-color;
+
+            .models-text{
+                padding-right:40px;
+            }
+        }
+
+
+    }
+
 
    
 .shop-page-container{
@@ -95,14 +141,61 @@
     height:auto;
 
 .filter-div{
+    padding-left: 50px;
     width: 30%;
     height: auto;
     margin-left:10px;
-    background-color: purple;
-    margin-top: -100px;
+    background-color: rgb(244, 222, 244);
+    margin-top: -160px;
 
+    .new-arrival-header{
+        font-family: "Roboto-Bold";
+        font-size: 22px;
+        color: $dark-grey-color;
+    }
     
+    .new-arrival-text{
+        font-family: "Roboto-Regular";
+        font-size: 16px;
+        color: $dark-grey-color;
+        margin-bottom: 20px;
+    }
 
+    .shop-room-header{
+        font-family: "Roboto-Bold";
+        font-size: 20px;
+        color: $dark-grey-color;
+        margin-bottom: 10px;
+    }
+
+    .categories{
+        list-style:none;
+        
+        li{
+            a{
+                font-family: "Roboto-Regular";
+                font-size: 16px;
+                color: $dark-grey-color;
+                margin-bottom: 5px;
+                text-decoration:none;
+            }
+            
+        }
+    }
+    .shop-concept{
+        margin-top: 40px;
+        font-family: "Roboto-Bold";
+        font-size: 20px;
+        color: $dark-grey-color;
+        margin-bottom: 17px;
+    }
+
+    .concept-text{
+        font-family: "Roboto-Regular";
+        font-size: 16px;
+        color: $dark-grey-color;
+        margin-bottom: 8px;
+    }
 
 }
 
@@ -113,9 +206,13 @@
         flex-direction:row;
         flex-wrap:wrap;
         justify-content:center;
-        background-color: pink;
+        // background-color: pink;
         width:70%;
         margin-left: 20px;
+
+        .button{
+            display:none;
+        }
         
 
         .product{
@@ -124,37 +221,121 @@
             width: 306px;
             height: 465px;
 
+            .woocommerce-LoopProduct-link{
+                text-decoration:none;
+                color: $dark-grey-color;
+                
+                
+
             img{
                 width:306px;
                 height: 365px;
             }
     
-            .woocommerce-LoopProduct-link{
-                display: inline-block;
-                text-decoration:none;
-                width: 306px;
-                // height:90px;
-    
-    
-                h2{
-                    font-weight:700;
+            
+            .woocommerce-loop-product__title{
+                    margin-top: 10px;
+                    font-family:'Roboto-Bold';
                     font-size:18px;
                     line-height:21.09px;
                     color: $dark-grey-color;
-                    
-                }
-    
-                span{
-                    font-weight:700;
-                    font-size: 24px;
-                    line-height: 28.13px;
-                }
-    
-                .button{
-                    display:none;
-                }
+                   
+            }
 
+            .attribute-div{
+             
+                label{
+                    input[type="radio"]{
+                        -webkit-appearance: none; 
+                        -moz-appearance: none;
+                        appearance: none; 
+                        width: 10px;
+                        height: 10px; 
+                        border-radius: 50%;
+                        border: none;
+                         
+                        outline: none; 
+
+                        &#color_211_grey{
+                            background-color: grey;
+                            position:relative;
+                            top:10px;
+                        }
+
+                        &#color_211_pink{
+                            background-color: rgb(212, 134, 147);
+                            position:relative;
+                            top: -9px;
+                            left: 15px;
+                        }
+
+                        &#color_208_brown{
+                            background-color: rgb(159, 54, 54);
+                            position:relative;
+                            top:10px;
+                           
+                        }
+
+                        &#color_208_grey{
+                            background-color: grey;
+                            position:relative;
+                            top: -9px;
+                            left: 15px;
+                        }
+
+                        &#color_82_grey{
+                            background-color: grey;
+                            position:relative;
+                            top:10px;
+                        }
+
+                        &#color_82_pink{
+                            background-color: rgb(212, 134, 147);
+                            position:relative;
+                            top: -9px;
+                            left: 15px;
+                        }
+
+                        &#color_78_brown{
+                            background-color: rgb(159, 54, 54);
+                            position:relative;
+                            top:10px;
+                        }
+
+      
+
+                        &#color_78_grey{
+                            background-color: grey;
+                            position:relative;
+                            top: -9px;
+                            left: 15px;
+                        }
+
+                        &#color_72_brown{
+                            background-color: rgb(159, 54, 54);
+                            position:relative;
+                            top:10px;
+                        }
+
+                        &#color_72_grey{
+                            background-color: grey;
+                            position:relative;
+                            top: -9px;
+                            left: 15px;
+                        }
+                    }
+            }        
+    }
+            .price{
+                font-family: "Roboto-Bold";
+                font-size: 24px;
+                line-height: 28.13px;
+                margin-top: 50px;
+          
+                position:relative;
+                bottom: 0;
                 
+            }
             }
         }  
             
@@ -172,6 +353,7 @@
     justify-content: center;
     margin-top: 100px;
     margin-bottom: 100px;
+    margin-left: 500px;
 
 
   
@@ -187,7 +369,9 @@
     }  
 }
 
-
+.page-numbers{
+    display:none;
+}
 
     
 

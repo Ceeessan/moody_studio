@@ -100,6 +100,10 @@
     margin-left:10px;
     background-color: purple;
     margin-top: -100px;
+
+    
+
+
 }
 
 
@@ -116,7 +120,9 @@
 
         .product{
             list-style:none;
-            margin:15px;
+            margin:10px;
+            width: 306px;
+            height: 465px;
 
             img{
                 width:306px;
@@ -124,10 +130,10 @@
             }
     
             .woocommerce-LoopProduct-link{
-                
+                display: inline-block;
                 text-decoration:none;
-                width: 229px;
-                height:90px;
+                width: 306px;
+                // height:90px;
     
     
                 h2{
@@ -147,6 +153,8 @@
                 .button{
                     display:none;
                 }
+
+                
             }
         }  
             

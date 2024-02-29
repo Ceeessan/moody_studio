@@ -21,7 +21,7 @@ function deleteHotFile() {
     // Skapa "hot"-filen i output-mappen
     const hotFilePath = path.join(buildPath, 'hot');
 
-    fs.unlink(hotFilePath, function(){
+    fs.unlink(hotFilePath, function () {
         console.log(`"hot" file deleted at ${hotFilePath}`);
     });
 }

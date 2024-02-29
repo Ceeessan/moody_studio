@@ -7,8 +7,6 @@ if(!defined('ABSPATH')){
 
 require_once("vite.php");
 
-require_once("hooks.php");
-
 require_once("listing-hooks.php");
 
 require_once("checkout-hooks.php");

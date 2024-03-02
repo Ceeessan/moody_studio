@@ -1,0 +1,154 @@
+.content-area{
+    padding: 0 40px;
+}
+
+
+.woocommerce-Tabs-panel--description{
+    padding: 66px;
+    background-color: #F0EFED;
+    font-size: 16px;
+    width: 66%;
+    margin-bottom: 100px;
+
+    p:nth-of-type(1){
+        color: #DA0909;
+        font-family: 'Roboto-Light';
+        margin-bottom: 20px;
+    }
+
+    p:nth-of-type(2){
+        margin-bottom: 40px;
+    }
+
+    p:nth-of-type(3){
+        font-family: 'Roboto-Light';
+        margin: 10px 0;
+    }
+    p:nth-of-type(4){
+        font-family: 'Roboto-Light';
+    }
+}
+
+.wc-tabs{
+    visibility: hidden;
+}
+
+.entry-summary{
+    width: 33%;
+    margin-left: 12px;
+
+    h1{
+        font-size: 28px;
+        font-family: 'Roboto-Regular';
+    }
+
+    .price{
+        font-size: 24px;
+        font-family: 'Roboto-Medium';
+        margin: 20px 0;
+    }
+
+    .woocommerce-product-details__short-description{
+        font-family: 'Roboto-Light';
+        font-size: 18px;
+        margin-bottom: 20px;
+    }
+
+    .variations_form{
+        table{
+            width: 100%;
+
+            #size, #pa_color{
+                width: 100%;
+                padding: 12px;
+                font-size: 16px;
+                font-weight: 300px;
+            }
+        }
+
+        label{
+            display: none;
+        }
+    }
+    
+
+    .single_add_to_cart_button{
+        font-family: 'Roboto-Bold';
+        background-color: $dark-grey-color;
+        font-size: 16px;
+        border: none;
+        width: 100%;
+        padding: 12px;
+        color: white;
+        cursor: pointer;
+        margin-top: 10px;
+    }
+}
+
+.products .columns-4{
+    display: flex;
+    justify-content: space-between;
+    margin-top: 40px;
+
+    .attribute-div{
+        display: none;
+    }
+
+    li{
+        list-style-type: none;
+
+        .add_to_cart_button{
+            visibility: hidden;
+        }
+
+        a{
+            color: $dark-grey-color;
+            text-decoration: none;
+
+            h2{
+                font-size: 18px;
+                margin: 20px 0;
+            }
+
+            span{
+                font-family: 'Roboto-Bold';
+                font-size: 24px;
+            }
+        }
+    }
+}
+
+.single-product-div{
+    display: flex;
+    .woocommerce-product-gallery{
+        background-color: pink;
+    width: 66%;
+    .woocommerce-product-gallery__wrapper{
+        display: flex;
+    }
+}
+}
+
+.woocommerce-Reviews, .woocommerce-product-rating{
+    display: none;
+}
+
+.product-colors {
+    margin-bottom: 20px;
+}
+
+.product-color {
+    display: inline-block;
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    margin-right: 10px;
+    cursor: pointer;
+}
+
+.product-color:hover {
+    border: 2px solid #333; 
+}¨
+.product-color:active {
+    border: 2px solid #333; /* Lägg till en border för att indikera att färgen är vald */
+}

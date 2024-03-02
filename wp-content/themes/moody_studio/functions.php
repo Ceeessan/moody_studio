@@ -11,6 +11,8 @@ require_once("listing-hooks.php");
 
 require_once("checkout-hooks.php");
 
+require_once("product-hooks.php");
+
 require_once("init.php");
 
 require_once("settings.php");

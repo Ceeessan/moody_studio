@@ -75,12 +75,14 @@ function add_text_under_title(){
 
 add_action('woocommerce_archive_description', 'add_text_under_title');
 
-
+//Knapp för listing
 function load_products_button(){
 
+    if (is_shop() || is_product_category() || is_product_tag()) { 
     echo '<div class=button-container>';
     echo '<button class="load-products-button"> LOAD MORE PRODUCTS </button>';
     echo '</div>';
+    }
 }
 
 add_action('woocommerce_after_main_content', 'load_products_button');

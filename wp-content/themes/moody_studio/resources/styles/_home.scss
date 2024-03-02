@@ -161,7 +161,6 @@ body{
 .top-rating{
     padding: 40px;
     font-family: 'Roboto-Bold';
-    display: flex;
 
     h2{
         font-size: 34px;
@@ -169,7 +168,14 @@ body{
         color: $dark-grey-color;
     }
 
+    li{
+        a{
+            display: flex; 
+        }
+    }
+
     .products{
+
         h2{
             font-size: 18px;
         }
@@ -188,8 +194,19 @@ body{
         
     }
 
-    .woocommerce-loop-product__title{
-        display: flex;
+    .woocommerce-LoopProduct-link{
+        img{
+            height: 308px !important;
+            width: 198px !important;
+        }
+
+        .price-title-wrapper{
+            margin: 90px 25px;
+
+            .price{
+                margin-top: 10px;
+            }
+        }
     }
 }
 

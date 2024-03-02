@@ -91,3 +91,28 @@ function update_price_with_variation_price() {
    " );
 }
 
+//Ger bilder i Product Gallery en bestämd storlek
+function custom_gallery_image_size($size) {
+    return array(
+        'width' => 381,
+        'height' => 572,
+        'crop' => 1,
+    );
+}
+add_filter('woocommerce_get_image_size_gallery_thumbnail', 'custom_gallery_image_size');
+
+
+
+//Lägger till "Not available in stores" under short description
+add_action( 'woocommerce_single_product_summary', 'add_custom_text_with_icon_below_short_description', 25 );
+
+function add_custom_text_with_icon_below_short_description() {
+    if ( is_product() ) {
+        $icon_url = esc_url( get_template_directory_uri() ) . '/resources/images/pin.svg';
+
+        echo '<p class="not-available"><img src="' . $icon_url . '"> <span>Not available in stores</span></p>';
+    }
+}
+
+//Tar bort "...added to cart"-meddelandet
+add_filter( 'wc_add_to_cart_message_html', '__return_false' );

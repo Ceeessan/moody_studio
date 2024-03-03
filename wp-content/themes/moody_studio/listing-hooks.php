@@ -1,21 +1,5 @@
 <?php
 
-//Detta är för att skapa widgets i panelen. Så att man ska kunna lägga till kategorier i filtrerings-området.
-function mytheme_widgets_init() {
-    register_sidebar( array(
-        'name'          => __( 'Sidofält', 'mytheme' ),
-        'id'            => 'sidebar-1',
-        'description'   => __( 'Widget-område på sidofältet', 'mytheme' ),
-        'before_widget' => '<section id="%1$s" class="widget %2$s">',
-        'after_widget'  => '</section>',
-        'before_title'  => '<h2 class="widget-title">',
-        'after_title'   => '</h2>',
-    ) );
-}
-add_action( 'widgets_init', 'mytheme_widgets_init' );
-//////////////////////////////////////
-
-
 // Ta bort breadcrumbs från WooCommerce
 function remove_woocommerce_breadcrumb() {
     remove_action('woocommerce_before_main_content', 'woocommerce_breadcrumb', 20);
@@ -137,3 +121,5 @@ function filter_sort_line(){
 }
 
 add_action('woocommerce_archive_description', 'filter_sort_line');
+
+

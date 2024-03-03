@@ -1,0 +1,45 @@
+.woocommerce{
+
+    .woocommerce-breadcrumb{
+        margin: 30px 0;
+    }
+
+    .cart-title{
+        text-align: center;
+        margin-bottom: 20px;
+        font-size: 34px;
+        font-family: 'Roboto-Regular';
+    }
+
+    table.shop_table{
+        margin: 0 40px;
+        width: 60%;
+    }
+
+    .cart-collaterals{
+        display: flex;
+
+        .cart-collaterals-content{
+            width: 100%;
+
+            .cart_totals{
+            background-color:rgb(236, 235, 233, 0.7);
+            float: left;
+            width: 80%;
+
+            a.button.alt{
+                text-align: center;
+                background-color: $dark-grey-color;
+                padding: 15px 60px;
+            }
+
+            }
+        }
+
+    }
+}
+
+
+
+.cart-table-container{
+}

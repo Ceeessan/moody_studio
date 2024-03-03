@@ -19,10 +19,19 @@ defined( 'ABSPATH' ) || exit;
 
 do_action( 'woocommerce_before_cart' ); ?>
 
-<form class="woocommerce-cart-form" action="<?php echo esc_url( wc_get_cart_url() ); ?>" method="post">
-	<?php do_action( 'woocommerce_before_cart_table' ); ?>
+<?php if ( wc_get_page_id( 'shop' ) > 0 && function_exists( 'woocommerce_breadcrumb' ) ) : ?>
     <?php woocommerce_breadcrumb(); ?>
-	<table class="shop_table shop_table_responsive cart woocommerce-cart-form__contents" cellspacing="0">
+<?php endif; ?>
+
+<h2 class="cart-title"><?php esc_html_e( 'SHOPPING BAG', 'woocommerce' ); ?></h2>
+
+
+<form class="woocommerce-cart-form" action="<?php echo esc_url( wc_get_cart_url() ); ?>" method="post">
+    <?php do_action( 'woocommerce_before_cart_table' ); ?>
+
+    <div class="cart-collaterals">
+        <div class="cart-table-container">
+            <table class="shop_table shop_table_responsive cart woocommerce-cart-form__contents" cellspacing="0">
 		<thead>
 			<tr>
 				<th class="product-remove"><span class="screen-reader-text"><?php esc_html_e( 'Remove item', 'woocommerce' ); ?></span></th>
@@ -34,12 +43,9 @@ do_action( 'woocommerce_before_cart' ); ?>
 			</tr>
 		</thead>
 		<tbody>
-            
 			<?php do_action( 'woocommerce_before_cart_contents' ); ?>
 
 			<?php
-
-            
 			foreach ( WC()->cart->get_cart() as $cart_item_key => $cart_item ) {
 				$_product   = apply_filters( 'woocommerce_cart_item_product', $cart_item['data'], $cart_item, $cart_item_key );
 				$product_id = apply_filters( 'woocommerce_cart_item_product_id', $cart_item['product_id'], $cart_item, $cart_item_key );
@@ -177,22 +183,27 @@ do_action( 'woocommerce_before_cart' ); ?>
 
 			<?php do_action( 'woocommerce_after_cart_contents' ); ?>
 		</tbody>
-	</table>
-	<?php do_action( 'woocommerce_after_cart_table' ); ?>
+		</table>
+        </div>
+
+        <div class="cart-collaterals">
+            <?php do_action( 'woocommerce_before_cart_collaterals' ); ?>
+
+            <div class="cart-collaterals-content">
+                <?php
+                /**
+                 * Cart collaterals hook.
+                 *
+                 * @hooked woocommerce_cross_sell_display
+                 * @hooked woocommerce_cart_totals - 10
+                 */
+                do_action( 'woocommerce_cart_collaterals' );
+                ?>
+            </div>
+        </div>
+    </div>
+
+    <?php do_action( 'woocommerce_after_cart_table' ); ?>
 </form>
-
-<?php do_action( 'woocommerce_before_cart_collaterals' ); ?>
-
-<div class="cart-collaterals">
-	<?php
-		/**
-		 * Cart collaterals hook.
-		 *
-		 * @hooked woocommerce_cross_sell_display
-		 * @hooked woocommerce_cart_totals - 10
-		 */
-		do_action( 'woocommerce_cart_collaterals' );
-	?>
-</div>
 
 <?php do_action( 'woocommerce_after_cart' ); ?>

@@ -88,6 +88,24 @@ if ( woocommerce_product_loop() ) {
     <p class="concept-text"> Conscious </p>
     <p class="concept-text"> Premium Quality </p>
     <p class="concept-text"> Classic Collection </p>
+
+    <form >
+        <h4 class="gender-text"> Gender </h4>
+        <div class="gender-container">
+    <label>
+        <input type="radio" name="gender" value="man">
+        Man
+    </label>
+    <label>
+        <input type="radio" name="gender" value="kvinna">
+        Woman
+        
+    </label>
+    </div>
+</form>
+
+
+    <?php echo do_shortcode('[wpf-filters id=1]') ?>
 </div>
 
 

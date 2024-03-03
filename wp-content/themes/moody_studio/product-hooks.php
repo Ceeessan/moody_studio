@@ -114,4 +114,5 @@ function add_custom_text_with_icon_below_short_description() {
     }
 }
 
-
+//Tar bort "...added to cart"-meddelandet
+// add_filter( 'wc_add_to_cart_message_html', '__return_false' );

@@ -12,3 +12,4 @@ function custom_close_price_title_wrapper() {
 add_action( 'woocommerce_shop_loop_item_title', 'custom_open_price_title_wrapper', 9 );
 
 add_action( 'woocommerce_after_shop_loop_item_title', 'custom_close_price_title_wrapper', 10 );
+

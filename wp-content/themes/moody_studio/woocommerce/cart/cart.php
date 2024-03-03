@@ -29,7 +29,7 @@ do_action( 'woocommerce_before_cart' ); ?>
 <form class="woocommerce-cart-form" action="<?php echo esc_url( wc_get_cart_url() ); ?>" method="post">
     <?php do_action( 'woocommerce_before_cart_table' ); ?>
 
-    <div class="cart-collaterals">
+    <div class="custom-cart-collaterals">
         <div class="cart-table-container">
             <table class="shop_table shop_table_responsive cart woocommerce-cart-form__contents" cellspacing="0">
 		<thead>

@@ -159,6 +159,16 @@
                 }
             }
 
+            .shop_table.shop_table_responsive{
+                th, td{
+                    padding: 0;
+                }
+
+                tr.order-total th{
+                    padding-top: 20px;
+                }
+            }
+
 
             .login-btn{
                 margin-top: 30px;

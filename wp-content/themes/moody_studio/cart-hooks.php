@@ -48,3 +48,13 @@ function woocommerce_button_proceed_to_checkout() {
     <a href="<?php echo $checkout_url; ?>" class="checkout-button button alt wc-forward"><?php _e( 'CONTINUE TO CHECKOUT' ); ?></a>
     <?php
 }
+
+//text inne i cart när varukorgen är tom
+remove_action( 'woocommerce_cart_is_empty', 'wc_empty_cart_message', 10 );
+add_action( 'woocommerce_cart_is_empty', 'custom_empty_cart_message', 10 );
+
+function custom_empty_cart_message() {
+    $html  = '<p class="cart-empty">';
+    $html .= wp_kses_post( apply_filters( 'wc_empty_cart_message', __( 'Your cart is currently empty.', 'woocommerce' ) ) );
+    echo $html . '</p>';
+}

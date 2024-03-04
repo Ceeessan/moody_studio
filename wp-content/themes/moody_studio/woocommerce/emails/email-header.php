@@ -26,7 +26,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 		<meta http-equiv="Content-Type" content="text/html; charset=<?php bloginfo( 'charset' ); ?>" />
 		<meta content="width=device-width, initial-scale=1.0" name="viewport">
 		<title><?php echo get_bloginfo( 'name', 'display' ); ?></title>
-		<h1 class="title-of-website"> Moody Studio </h1>
+		
 	</head>
 	<body <?php echo is_rtl() ? 'rightmargin' : 'leftmargin'; ?>="0" marginwidth="0" topmargin="0" marginheight="0" offset="0">
 		<table width="100%" id="outer_wrapper">
@@ -38,6 +38,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 							<tr>
 								<td align="center" valign="top">
 									<div id="template_header_image">
+								
 										<?php
 										$img = get_option( 'woocommerce_email_header_image' );
 
@@ -71,3 +72,4 @@ if ( ! defined( 'ABSPATH' ) ) {
 																<tr>
 																	<td valign="top">
 																		<div id="body_content_inner">
+																		<h1 class="title-of-website"> Moody Studio </h1>

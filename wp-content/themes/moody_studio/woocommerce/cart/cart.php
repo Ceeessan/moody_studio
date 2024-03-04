@@ -64,22 +64,24 @@ do_action( 'woocommerce_before_cart' ); ?>
 					?>
 					<tr class="woocommerce-cart-form__cart-item <?php echo esc_attr( apply_filters( 'woocommerce_cart_item_class', 'cart_item', $cart_item, $cart_item_key ) ); ?>">
 
-						<td class="product-remove">
-							<?php
-								echo apply_filters( // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
-									'woocommerce_cart_item_remove_link',
-									sprintf(
-										'<a href="%s" class="remove" aria-label="%s" data-product_id="%s" data-product_sku="%s">&times;</a>',
-										esc_url( wc_get_cart_remove_url( $cart_item_key ) ),
-										/* translators: %s is the product name */
-										esc_attr( sprintf( __( 'Remove %s from cart', 'woocommerce' ), wp_strip_all_tags( $product_name ) ) ),
-										esc_attr( $product_id ),
-										esc_attr( $_product->get_sku() )
-									),
-									$cart_item_key
-								);
-							?>
-						</td>
+                    <td class="product-remove">
+                        
+                        <?php
+                        echo apply_filters(
+                            'woocommerce_cart_item_remove_link',
+                            sprintf(
+                                '<a href="%s" class="remove" aria-label="%s" data-product_id="%s" data-product_sku="%s">%s</a>',
+                                esc_url( wc_get_cart_remove_url( $cart_item_key ) ),
+                                esc_attr( sprintf( __( 'Remove %s from cart', 'woocommerce' ), wp_strip_all_tags( $product_name ) ) ),
+                                esc_attr( $product_id ),
+                                esc_attr( $_product->get_sku() ),
+                                file_get_contents( get_template_directory_uri() . '/resources/images/remove.svg' )
+                            ),
+                            $cart_item_key
+                        );
+                        ?>
+                        </td>
+
 
 						<td class="product-thumbnail">
 						<?php
@@ -108,10 +110,8 @@ do_action( 'woocommerce_before_cart' ); ?>
 
 						do_action( 'woocommerce_after_cart_item_name', $cart_item, $cart_item_key );
 
-						// Meta data.
 						echo wc_get_formatted_cart_item_data( $cart_item ); // PHPCS: XSS ok.
 
-						// Backorder notification.
 						if ( $_product->backorders_require_notification() && $_product->is_on_backorder( $cart_item['quantity'] ) ) {
 							echo wp_kses_post( apply_filters( 'woocommerce_cart_item_backorder_notification', '<p class="backorder_notification">' . esc_html__( 'Available on backorder', 'woocommerce' ) . '</p>', $product_id ) );
 						}
@@ -124,8 +124,21 @@ do_action( 'woocommerce_before_cart' ); ?>
 							?>
 						</td>
 
+						<td class="product-subtotal" data-title="<?php esc_attr_e( 'Subtotal', 'woocommerce' ); ?>">
+                        <?php esc_html_e( 'Total:', 'woocommerce' ); ?>
+
+                            <?php
+								echo apply_filters( 'woocommerce_cart_item_subtotal', WC()->cart->get_product_subtotal( $_product, $cart_item['quantity'] ), $cart_item, $cart_item_key ); // PHPCS: XSS ok.
+							?>
+						</td>
+
 						<td class="product-quantity" data-title="<?php esc_attr_e( 'Quantity', 'woocommerce' ); ?>">
-						<?php
+                        <!-- button för hjärtat -->
+                        <button type="button" class="heart-btn">
+                            <?php echo file_get_contents( get_template_directory_uri() . '/resources/images/heart.svg' ); ?>
+                        </button>
+
+                        <?php
 						if ( $_product->is_sold_individually() ) {
 							$min_quantity = 1;
 							$max_quantity = 1;
@@ -145,15 +158,10 @@ do_action( 'woocommerce_before_cart' ); ?>
 							$_product,
 							false
 						);
+                        
 
 						echo apply_filters( 'woocommerce_cart_item_quantity', $product_quantity, $cart_item_key, $cart_item ); // PHPCS: XSS ok.
 						?>
-						</td>
-
-						<td class="product-subtotal" data-title="<?php esc_attr_e( 'Subtotal', 'woocommerce' ); ?>">
-							<?php
-								echo apply_filters( 'woocommerce_cart_item_subtotal', WC()->cart->get_product_subtotal( $_product, $cart_item['quantity'] ), $cart_item, $cart_item_key ); // PHPCS: XSS ok.
-							?>
 						</td>
 					</tr>
 					<?php
@@ -184,6 +192,13 @@ do_action( 'woocommerce_before_cart' ); ?>
 			<?php do_action( 'woocommerce_after_cart_contents' ); ?>
 		</tbody>
 		</table>
+
+        <!-- en subtotal under varorna i cart -->
+        <div class="cart-subtotal">
+            <h3><?php esc_html_e( 'Total', 'woocommerce' ); ?></h3>
+            <?php echo '<span class="woocommerce-Price-amount amount"><bdi>' . WC()->cart->get_cart_subtotal() . '</bdi></span>'; ?>
+        </div>
+
         </div>
 
         <div class="cart-collaterals">

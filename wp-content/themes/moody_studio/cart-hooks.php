@@ -50,11 +50,34 @@ function woocommerce_button_proceed_to_checkout() {
 }
 
 //text inne i cart när varukorgen är tom
-remove_action( 'woocommerce_cart_is_empty', 'wc_empty_cart_message', 10 );
 add_action( 'woocommerce_cart_is_empty', 'custom_empty_cart_message', 10 );
 
 function custom_empty_cart_message() {
     $html  = '<p class="cart-empty">';
     $html .= wp_kses_post( apply_filters( 'wc_empty_cart_message', __( 'Your cart is currently empty.', 'woocommerce' ) ) );
     echo $html . '</p>';
+}
+
+//flyttar på cross-sells from default postition till längst ner på sidan
+remove_action( 'woocommerce_cart_collaterals', 'woocommerce_cross_sell_display' );
+add_action( 'woocommerce_after_cart_table', 'woocommerce_cross_sell_display' );
+
+ //ändrar från 2 till 4 columns 
+add_filter( 'woocommerce_cross_sells_columns', 'change_cross_sells_columns' );
+ 
+function change_cross_sells_columns( $columns ) {
+return 4;
+}
+
+//byter namn på cross-sells heading
+add_filter( 'woocommerce_product_cross_sells_products_heading', 'change_cross_sells_heading' );
+function change_cross_sells_heading() {
+	return 'Also You May Buy';
+}
+
+//max 4 cross sells produkter kommer att visas
+add_filter( 'woocommerce_cross_sells_total', 'change_max_cross_sells_products' );
+  
+function change_max_cross_sells_products( $columns ) {
+return 4;
 }

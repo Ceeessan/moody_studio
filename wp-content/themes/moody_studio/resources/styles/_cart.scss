@@ -169,7 +169,6 @@
                 }
             }
 
-
             .login-btn{
                 margin-top: 30px;
                 button{
@@ -274,4 +273,42 @@
         }
     }
 
+    .cross-sells{
+        margin: 0 40px -40px 40px;
+
+        h2{
+            font-size: 24px;
+            margin: 20px 0;
+        }
+        
+        ul{
+            display: flex;
+            justify-content: space-between;
+
+            a{
+                color: $dark-grey-color;
+                font-size: 18px;
+
+            }
+
+            img{
+                height: 396px;
+                width: auto;
+            }
+
+            span{
+                font-family: 'Roboto-Bold';
+                font-size: 24px;
+            }
+        }
+
+        .add_to_cart_button{
+            visibility: hidden;
+        }
+
+        .attribute-div{
+            display: none;
+        }
+        
+    }
 }

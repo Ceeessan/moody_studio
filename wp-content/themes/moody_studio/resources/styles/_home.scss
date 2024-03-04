@@ -150,7 +150,7 @@ body{
         color: $dark-grey-color;
     }
 
-    span{
+    .price{
         font-size: 24px;
         color: $dark-grey-color;
     }
@@ -225,7 +225,7 @@ body{
         h2{
             font-size: 18px;
         }
-        span{
+        .price{
             color: $dark-grey-color;
             font-size: 24px;
         }
@@ -304,6 +304,10 @@ body{
     
     a.added_to_cart{
         display: none;
+    }
+
+    .star-rating{
+        color: $dark-grey-color;
     }
 }
 

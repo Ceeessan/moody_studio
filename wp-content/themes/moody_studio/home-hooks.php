@@ -17,14 +17,11 @@ add_action( 'woocommerce_after_shop_loop_item_title', 'custom_close_price_title_
 
 
 // Lägg till stjärn-rating
-function mytheme_add_star_rating() {
-    global $product;
-    $rating = $product->get_average_rating();
-    $width = ( $rating / 5 ) * 100;
+add_filter( 'woocommerce_product_get_rating_html', 'mytheme_custom_star_rating_html', 10, 3 );
 
-    echo "<div class='rating' >
-    <div class='fill' style='width:" . $width . "%;'> </div>
-    </div>";
+function mytheme_custom_star_rating_html( $html, $rating, $count ) {
+    $label = sprintf( __( 'Rated %s out of 5', 'woocommerce' ), $rating );
+    $stars_html = '<div class="star-rating" role="img" aria-label="' . esc_attr( $label ) . '">' . wc_get_star_rating_html( $rating, $count ) . '</div>';
+
+    return $stars_html;
 }
-
-add_action( 'woocommerce_after_shop_loop_item_title', 'mytheme_add_star_rating', 5 );

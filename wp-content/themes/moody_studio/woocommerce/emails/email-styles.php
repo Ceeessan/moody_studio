@@ -51,9 +51,8 @@ body {
 }
 
 .title-of-website{
-	padding-left: 70px;
-	padding-top: 70px;
-	font-size: 40px;
+	font-size: 30px;
+	margin-top: 5px;
 }
 
 #outer_wrapper {
@@ -162,7 +161,7 @@ body {
 
 .td {
 	color: <?php echo esc_attr( $text_lighter_20 ); ?>;
-	border: 1px solid <?php echo esc_attr( $body_darker_10 ); ?>;
+	border:none;
 	vertical-align: middle;
 }
 

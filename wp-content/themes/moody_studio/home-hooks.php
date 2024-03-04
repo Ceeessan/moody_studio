@@ -16,15 +16,5 @@ add_action( 'woocommerce_after_shop_loop_item_title', 'custom_close_price_title_
 
 
 
-// Lägg till stjärn-rating
-function mytheme_add_star_rating() {
-    global $product;
-    $rating = $product->get_average_rating();
-    $width = ( $rating / 5 ) * 100;
 
-    echo "<div class='rating' >
-    <div class='fill' style='width:" . $width . "%;'> </div>
-    </div>";
-}
 
-add_action( 'woocommerce_after_shop_loop_item_title', 'mytheme_add_star_rating', 5 );

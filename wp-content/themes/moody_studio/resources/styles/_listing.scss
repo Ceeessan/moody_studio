@@ -63,6 +63,7 @@
     .woocommerce-ordering{
         display:none;
     }
+
     
     .woocommerce-products-header{
         padding-left:510px;
@@ -234,9 +235,6 @@ form{
 
 
 .wpfFilterContent{
-    // .wpfFilterTaxNameWrapper{
-    // display:none;
-    // }
 
     .wfpDescription{
         font-size: 20px;
@@ -391,7 +389,8 @@ form{
                 font-family: "Roboto-Bold";
                 font-size: 24px;
                 line-height: 28.13px;
-                margin-top: 50px;
+                // margin-top: 50px;
+                margin-bottom:5px;
           
                 position:relative;
                 bottom: 0;
@@ -403,6 +402,8 @@ form{
   
     }  
 }
+
+
  
 #sidebar{
     display:none;
@@ -435,4 +436,5 @@ form{
 }
 
     
+
 

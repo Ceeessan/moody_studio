@@ -117,9 +117,33 @@ body{
     }
 }
 
+
 .decor-bohochic{
     padding: 20px 40px;
     font-family: 'Roboto-Bold';
+    
+    .woocommerce ul.products li.product a.button {
+        opacity: 0;
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
+        text-align: center;
+        width: 232px;
+        padding: 20px 25px;
+        border-radius: 30px;
+        background-color: #ffffff;
+        text-transform: uppercase;
+        font-family: 'Roboto-Regular';
+        font-size: 14px;
+        box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+        margin-top: -100px;
+    }
+
+    .woocommerce ul.products li.product:hover a.button {
+        transform: translateY(calc(-415% - 10px));
+        opacity: 1;
+        animation: fadeIn 0.5s; 
+    }
 
     h2{
         font-size: 18px;
@@ -159,8 +183,30 @@ body{
 }
 
 .top-rating{
-    padding: 40px;
+    margin: 40px;
     font-family: 'Roboto-Bold';
+
+    .woocommerce ul.products li.product a.button {
+        opacity: 0;
+        text-align: center;
+        margin-left: 13px;
+        width: 170px;
+        padding: 20px 25px;
+        border-radius: 30px;
+        background-color: #ffffff;
+        text-transform: uppercase;
+        font-size: 14px;
+        box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+        margin-top: -100px;
+
+    }
+
+    .woocommerce ul.products li.product:hover a.button {
+        transform: translateY(calc(-320% - 10px));
+        opacity: 1;
+        animation: fadeIn 0.5s; 
+
+    }
 
     h2{
         font-size: 34px;
@@ -254,4 +300,19 @@ body{
     .attribute-div{
         display: none;
     }
+
+    
+    a.added_to_cart{
+        display: none;
+    }
+}
+
+
+
+
+
+
+@keyframes fadeIn {
+    0% { opacity: 0; }
+    100% { opacity: 1; }
 }

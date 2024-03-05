@@ -17,6 +17,7 @@ add_action( 'woocommerce_after_shop_loop_item_title', 'custom_close_price_title_
 
 
 // Lägg till stjärn-rating
+/*
 add_filter( 'woocommerce_product_get_rating_html', 'mytheme_custom_star_rating_html', 10, 3 );
 
 function mytheme_custom_star_rating_html( $html, $rating, $count ) {
@@ -25,3 +26,10 @@ function mytheme_custom_star_rating_html( $html, $rating, $count ) {
 
     return $stars_html;
 }
+*/
+
+function remove_product_rating() {
+    remove_action( 'woocommerce_after_shop_loop_item_title', 'woocommerce_template_loop_rating', 5 );
+    remove_action( 'woocommerce_single_product_summary', 'woocommerce_template_single_rating', 10 );
+}
+add_action( 'init', 'remove_product_rating' );

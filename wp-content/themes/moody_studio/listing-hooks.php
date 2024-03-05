@@ -123,3 +123,12 @@ function filter_sort_line(){
 add_action('woocommerce_archive_description', 'filter_sort_line');
 
 
+
+
+//För att få fram lazy-load?
+function enqueue_ajax_script() {
+    if (is_page('products-page')) {
+        wp_enqueue_script('ajax-script', get_template_directory_uri() . '/resources/scripts/ajax.js', array('jquery'), null, true);
+    }
+}
+add_action('wp_enqueue_scripts', 'enqueue_ajax_script');

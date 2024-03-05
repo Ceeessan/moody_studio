@@ -13,6 +13,7 @@ function moody_studio_enqueue(){
 add_action('wp_enqueue_scripts', 'moody_studio_enqueue');
 
 
+include_once('woocommerce/ajax.php');
 
 
 function moody_studio_init()
@@ -32,3 +33,10 @@ function moody_studio_init()
     register_nav_menus($menu);
 }
 add_action("after_setup_theme", "moody_studio_init");
+
+
+
+function enqueue_custom_scripts() {
+    wp_enqueue_script('custom-ajax', get_template_directory_uri() . '/js/ajax.js', array('jquery'), '1.0', true);
+}
+add_action('wp_enqueue_scripts', 'enqueue_custom_scripts');

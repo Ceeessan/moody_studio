@@ -13,7 +13,6 @@
     display:flex;
     justify-content:center;
     margin-top: 20px;
-    // width:45%;
     
     .woocommerce-billing-fields{
         h3{
@@ -35,9 +34,6 @@
                 }            
             }
 
-
-
-
             .input-text {
                 height: 40px;
                 border-radius: 1px;
@@ -55,23 +51,14 @@
                         margin-top: 5px;
                     }
                  
-                }
-             
-               
-               
+                }   
             }
-    }
+        }
 
     .col-2{
         display:none;
     }
-
-
-
 }
-
-
-
 
 #order_review_heading{
     display:none;
@@ -82,27 +69,17 @@
     padding-right: 200px;
     margin-top: 65px;
  
-
     .shop_table{
         border:none;
         color: $dark-grey-color;
         
-        
-
         td{
             border:none;
         }
 
-
-
         .order-total{
             font-size: 24px;
-
         }
-    }
-
-    .woocommerce-shipping-totals{
-        display:none;
     }
   
     #payment{
@@ -117,8 +94,7 @@
             width: 10px;
             height: 10px; 
             border-radius: 50%;
-            border: 1px solid grey;
-            
+            border: 1px solid grey;   
             outline: none;    
     }
     input[type="radio"]:checked {
@@ -164,12 +140,8 @@
         font-size: 14px;
 
         a{
-            color: $dark-grey-color;
-
-        
+            color: $dark-grey-color;    
         }
-
-
     }
 
     #place_order{
@@ -185,8 +157,6 @@
         margin-right: 50px;
      }
 }
-
-
 }
 
 .woocommerce-order{
@@ -195,7 +165,6 @@
 
 
 //Klarna-payment-easy-styling
-
 #kco-wrapper{
     margin:auto;
     display:flex;
@@ -203,7 +172,4 @@
     width: 800px;
 }
 
-/* .woocommerce-shipping-totals{
-    display:none;
-} */
 

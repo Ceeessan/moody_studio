@@ -15,3 +15,5 @@ function remove_billing_address_2_and_company_fields($fields) {
 
     return $fields;
 }
+
+

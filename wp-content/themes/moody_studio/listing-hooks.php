@@ -31,7 +31,7 @@ function show_banner_shop(){
     <p class='no-member-text'> Not a member? Join now to shop </p>
     </div>";
     } 
-}
+  }
 }
 
 add_action( 'woocommerce_before_main_content', 'show_banner_shop', 10 );
@@ -64,7 +64,7 @@ function load_products_button(){
 
     if (is_shop() || is_product_category() || is_product_tag()) { 
     echo '<div class=button-container>';
-    echo '<button class="load-products-button"> LOAD MORE PRODUCTS </button>';
+    echo '<button class="load-more-button" id="load-more"> LOAD MORE PRODUCTS </button>';
     echo '</div>';
     }
 }
@@ -76,8 +76,7 @@ add_action('woocommerce_after_main_content', 'load_products_button');
 //Fixa färg-pluppar för variablerna
 function custom_display_product_colors() {
     global $product;
-
-    
+ 
     if ( $product->is_type( 'variable' ) && taxonomy_exists( 'pa_color' ) ) {
         
         $terms = wc_get_product_terms( $product->get_id(), 'pa_color', array( 'fields' => 'names' ) );
@@ -101,8 +100,6 @@ function custom_display_product_colors() {
 }
 add_action( 'woocommerce_shop_loop_item_title', 'custom_display_product_colors', 10 );
 
-
-
 //Skapa en hook som lägger till filter-rad under product-title
 function filter_sort_line(){
 
@@ -122,13 +119,15 @@ function filter_sort_line(){
 
 add_action('woocommerce_archive_description', 'filter_sort_line');
 
+// Lägg till betyg på hemsidan
+function mytheme_add_star_rating() {
+    global $product;
+    $rating = $product->get_average_rating();
+    $width = ( $rating / 5 ) * 100;
 
-
-
-//För att få fram lazy-load?
-function enqueue_ajax_script() {
-    if (is_page('products-page')) {
-        wp_enqueue_script('ajax-script', get_template_directory_uri() . '/resources/scripts/ajax.js', array('jquery'), null, true);
-    }
+    echo "<div class='rating-with-stars' >
+    <div class='fill' style='width:" . $width . "%;'> </div>
+    </div>";
 }
-add_action('wp_enqueue_scripts', 'enqueue_ajax_script');
+
+add_action( 'woocommerce_after_shop_loop_item_title', 'mytheme_add_star_rating', 5 );

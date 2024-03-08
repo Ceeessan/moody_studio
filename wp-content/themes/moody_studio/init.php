@@ -1,19 +1,15 @@
 <?php
 
-// require_once("ajax.php");
-
 function moody_studio_enqueue(){
     // Här länkar vi till CSS och JS.
     $theme_directory = get_template_directory_uri();
     wp_enqueue_style("mystyle", $theme_directory . "/style.css");
     wp_enqueue_script("app", $theme_directory . "/app.js");
+    wp_enqueue_script("app", $theme_directory . "/ajax.js");
 
 }
 
 add_action('wp_enqueue_scripts', 'moody_studio_enqueue');
-
-
-include_once('woocommerce/ajax.php');
 
 
 function moody_studio_init()
@@ -35,8 +31,3 @@ function moody_studio_init()
 add_action("after_setup_theme", "moody_studio_init");
 
 
-
-function enqueue_custom_scripts() {
-    wp_enqueue_script('custom-ajax', get_template_directory_uri() . '/js/ajax.js', array('jquery'), '1.0', true);
-}
-add_action('wp_enqueue_scripts', 'enqueue_custom_scripts');
